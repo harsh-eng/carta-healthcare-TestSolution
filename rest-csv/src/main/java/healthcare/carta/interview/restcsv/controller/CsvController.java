@@ -44,9 +44,12 @@ public class CsvController {
 
 			while ((line = br.readLine()) != null) {
 				String [] csvData =line.split(",");
-				sum = sum+Double.valueOf(csvData[index]);
+				double value=0;
+				if(index<=csvData.length-1) {
+					value=Double.valueOf(csvData[index]);
+				}
+				sum = sum+value;
 				rows++;
-
 			}
 			if(rows!=0) {
 				outPut=(sum/rows);
